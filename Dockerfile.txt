@@ -1,0 +1,8 @@
+# Version: 0.1.0
+FROM ipython/scipystack
+MAINTAINER D gannon "dbgannon@gmail.com"
+RUN easy_install azure
+RUN easy_install nltk
+COPY pull-events-from-eventhub-through-queue.py /
+ENTRYPOINT ["python", "/pull-events-from-eventhub-through-queue.py"]
+
